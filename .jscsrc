@@ -1,0 +1,15 @@
+//.jscsrc
+// tested with jscs v1.13.1
+{
+  "preset": "node-style-guide",
+  "disallowSpaceAfterPrefixUnaryOperators": ["++", "--", "+", "-"],
+  "disallowSpaceBeforePostfixUnaryOperators": ["++", "--"],
+  "fileExtensions": [".js", ".jsx"],
+  "requireSpacesInsideObjectBrackets": "all",
+  //"requireSpacesInsideArrayBrackets": "allButNested",
+  "verbose": true,
+  "requireTrailingComma": null,
+  "disallowTrailingComma": true,
+  "disallowMultipleVarDecl": null,
+  "requireMultipleVarDecl": true
+}

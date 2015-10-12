@@ -1,0 +1,6 @@
+{
+  "name": "leaderboards",
+  "scripts": {
+    "start": "MONGO_URL=mongodb://localhost:27017/leaderboards meteor --settings ../deploy/local.json"
+  }
+}

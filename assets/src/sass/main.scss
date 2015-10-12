@@ -1,0 +1,34 @@
+@import "compass";
+
+@import "config/colors";
+@import "mixins/*";
+@import "modules/**/*";
+@import "components/list";
+@import "components/buttons";
+@import "components/textfield";
+@import "components/pages/add-player";
+@import "components/pages/home";
+
+body {
+  background-color: $white;
+  color: $black;
+}
+a {
+  text-decoration: none;
+  color: $color-links;
+}
+.page {
+  padding: 24px 24px 0 24px;
+}
+#login-buttons {
+  .login-link-and-dropdown-list {
+    .login-link-text {
+      text-decoration: none;
+      color: $white;
+    }
+    #login-dropdown-list {
+      left: auto;
+      right: 0;
+    }
+  }
+}

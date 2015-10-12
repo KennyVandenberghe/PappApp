@@ -1,0 +1,21 @@
+ul {
+  list-style: none;
+  padding: 0;
+  li {
+    height: 50px;
+    border-bottom: 1px solid gainsboro;
+    position: relative;
+    &.player {
+      font-size: 26px;
+    }
+    div {
+      position: absolute;
+      top: calc(50% - 15px);
+    }
+    span {
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 15px);
+    }
+  }
+}

@@ -1,0 +1,38 @@
+<template name="home">
+	{{#if showSelectedPlayer}}
+		{{> scoreButtons}}
+	{{/if}}
+	<div class="page page-home">
+		{{#if runningSession}}
+			<ul>
+				{{#with runningSession}}
+					{{#each players}}
+						<li class="player {{selectedClass}}">
+							<div>{{name}}: {{score}}</div>
+						</li>
+						{{#each games}}
+							<li>{{score}}</li>
+						{{/each}}
+					{{/each}}
+				{{/with}}
+			</ul>
+		{{#with runningSession}}
+		<div class="button-container">
+			<button class="finish new mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+				Finish session
+			</button>
+		</div>
+		{{/with}}
+		{{else}}
+			<div class="notification">
+				<span>There is no running session.</span>
+				<span>Create a new session to start playing</span>
+			</div>
+			<div class="button-container">
+				<button class="new mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+				  New session
+				</button>
+			</div>
+		{{/if}}
+	</div>
+</template>

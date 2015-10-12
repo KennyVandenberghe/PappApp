@@ -1,0 +1,66 @@
+ul {
+  list-style: none;
+  padding: 0; }
+  ul li {
+    height: 50px;
+    border-bottom: 1px solid gainsboro;
+    position: relative; }
+    ul li.player {
+      font-size: 26px; }
+    ul li div {
+      position: absolute;
+      top: calc(50% - 15px); }
+    ul li span {
+      position: absolute;
+      right: 10px;
+      top: calc(50% - 15px); }
+
+.button-container {
+  text-align: center; }
+
+.score-buttons-overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.8);
+  z-index: 9999; }
+
+.score-buttons-container {
+  text-align: center;
+  z-index: 99999;
+  opacity: 1;
+  width: 260px;
+  margin: auto;
+  margin-top: 70px; }
+
+@media (max-width: 479px) {
+  .mdl-cell--1-col, .mdl-cell--1-col-phone.mdl-cell--1-col-phone {
+    width: calc(33.33% - 16px); } }
+
+.page-add-player {
+  text-align: center; }
+
+.page-home .notification {
+  margin-bottom: 20px; }
+  .page-home .notification span {
+    display: block;
+    text-align: center; }
+
+body {
+  background-color: #fff;
+  color: #000; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+.page {
+  padding: 24px 24px 0 24px; }
+
+#login-buttons .login-link-and-dropdown-list .login-link-text {
+  text-decoration: none;
+  color: #fff; }
+
+#login-buttons .login-link-and-dropdown-list #login-dropdown-list {
+  left: auto;
+  right: 0; }

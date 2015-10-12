@@ -1,0 +1,9 @@
+<template name="ranking">
+  <div class="page page-ranking">
+    <ol>
+      {{#each players}}
+        <li class="player">{{name}}: {{score}}</li>
+      {{/each}}
+    </ol>
+  </div>
+</template>
