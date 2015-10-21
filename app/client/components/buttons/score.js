@@ -31,13 +31,18 @@ Template.scoreButtons.events({
   },
   'click .add': function(e) {
     var selectedPlayer = Session.get('selectedPlayer'),
-        session = Sessions.findOne({ended: {$exists: false}}),
+        sessionPlayers = Sessions.findOne({ended: {$exists: false}}).players
+        player = _.find(sessionPlayers, function(player) {
+          return player._id === selectedPlayer;
+        }),
+        playerNumber = player.number,
         value = parseInt($('[name=valueField]').val());
-    Meteor.call('modifyPlayerScore', selectedPlayer, session, value);
-    Meteor.call('addGameToSession', selectedPlayer, session, value);
+    $('[name=Score' + playerNumber + ']').val(value);
     $('[name=valueField]').val('');
     storedValue = 0;
     Session.set('selectedPlayer', '');
+    // Meteor.call('addGameToSession', selectedPlayer, session, value);
+
   },
   'click .cancel': function(e) {
     storedValue = 0;

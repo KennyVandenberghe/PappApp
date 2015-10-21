@@ -1,7 +1,4 @@
 <template name="home">
-	{{#if showSelectedPlayer}}
-		{{> scoreButtons}}
-	{{/if}}
 	<div class="page page-home">
 		{{#if runningSession}}
 			<ul>
@@ -10,14 +7,19 @@
 						<li class="player {{selectedClass}}">
 							<div>{{name}}: {{score}}</div>
 						</li>
-						{{#each games}}
+						{{#each sessionGames}}
+						<ul>
 							<li>{{score}}</li>
+						</ul>
 						{{/each}}
 					{{/each}}
 				{{/with}}
 			</ul>
 		{{#with runningSession}}
 		<div class="button-container">
+			<button class="add-game mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+				Add game
+			</button>
 			<button class="finish new mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
 				Finish session
 			</button>

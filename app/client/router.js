@@ -22,3 +22,6 @@ Router.route('/sessions/:_id', function() {
     }
   });
 });
+Router.route('/addGame', function() {
+  this.render('addGame');
+});

@@ -1,3 +1,4 @@
+var count = 1;
 Meteor.publish('sessionPlayers', function() {
   var currentUserId = this.userId;
   return Players.find({ createdBy: currentUserId });
@@ -10,10 +11,15 @@ Meteor.publish('endedSessions', function() {
 });
 Meteor.publish('allSessions', function() {
   return Sessions.find({});
-})
+});
+Meteor.publish('sessionGames', function() {
+  var session = Sessions.findOne({ ended: { $exists: false } });
+  return Games.find({sessionId: session._id});
+});
 Meteor.methods({
   insertPlayerData: function(name) {
     var currentUserId = Meteor.userId();
+    count++;
     if (name) {
       Players.insert({
         name: name,
@@ -33,6 +39,7 @@ Meteor.methods({
     Players.remove({ createdBy: currentUserId });
   },
   modifyPlayerScore: function(selectedPlayer, session, scoreValue) {
+    console.log(selectedPlayer, session, scoreValue);
     var currentUserId = Meteor.userId(),
         sessionId = session._id;
     Sessions.update({ _id: sessionId, 'players._id': selectedPlayer }, { $inc: { 'players.$.score': scoreValue } });
@@ -45,6 +52,7 @@ Meteor.methods({
     if (_.keys(players).length > 1) {
       var players = _.map(players, function(player) {
         player.score = 0;
+        player.number = count++;
         return player;
       })
       Sessions.insert({
@@ -63,16 +71,28 @@ Meteor.methods({
   finishSession: function(sessionId) {
     Sessions.update({ _id: sessionId }, { $set: { ended: true } });
   },
-  addGameToSession: function(playerId, session, value) {
-    var games = {};
-    _.extend(games, { score: value })
-    Sessions.update({
-      _id: session._id,
-      'players._id': playerId
-    }, {
-      $addToSet: {
-        'players.$.games': games
+  // addGameToSession: function(playerId, session, value) {
+  //   var games = {};
+  //   _.extend(games, { score: value })
+  //   Sessions.update({
+  //     _id: session._id,
+  //     'players._id': playerId
+  //   }, {
+  //     $addToSet: {
+  //       'players.$.games': games
+  //     }
+  //   });
+  // },
+  insertGame: function(sessionId, players) {
+    _.each(players, function(player) {
+      if(player.score === 0) {
+        throw new Meteor.Error(500, 'player score cannot be 0');
       }
+    });
+    Games.insert({
+      sessionId: sessionId,
+      players: players,
+      createdAt: new Date()
     });
   }
 });
