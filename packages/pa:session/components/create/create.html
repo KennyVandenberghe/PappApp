@@ -1,0 +1,28 @@
+<template name="createSession">
+  <div class="page page-create-session">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" id="sessionTitle" value="{{sessionTitle}}" name="sessionTitle" />
+      <label class="mdl-textfield__label" for="sessionTitle">Title...</label>
+    </div>
+    {{#each players}}
+      <ul>
+        <li class="player {{selected}}">
+          <div>{{name}}</div>
+          {{#if selected}}
+            <span>
+              <button class="remove mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      				  Remove player
+      				</button>
+            </span>
+          {{/if}}
+        </li>
+      </ul>
+    {{/each}}
+    {{> addPlayerForm}}
+    <div class="button-container">
+			<button class="create new mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+			  Create new session
+			</button>
+		</div>
+  </div>
+</template>

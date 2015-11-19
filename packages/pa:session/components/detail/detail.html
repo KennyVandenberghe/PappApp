@@ -1,0 +1,11 @@
+<template name="sessionDetail">
+  <div class="page page-session-details">
+    <ul>
+      {{#with session}}
+        {{#each players}}
+          <li>{{name}}: {{score}}</li>
+        {{/each}}
+      {{/with}}
+    </ul>
+  </div>
+</template>
