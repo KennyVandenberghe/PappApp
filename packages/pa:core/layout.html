@@ -1,0 +1,33 @@
+<template name="layout">
+	{{> head}}
+	<body>
+		<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+			<header class="mdl-layout__header">
+		    <div class="mdl-layout__header-row">
+		      <span class="mdl-layout-title">PappApp</span>
+		      <div class="mdl-layout-spacer"></div>
+		      <nav class="mdl-navigation ">
+		        <span class="mdl-navigation__link" href="">{{> loginButtons}}</span>
+		      </nav>
+		    </div>
+		  </header>
+		  <div class="mdl-layout__drawer">
+		    <span class="mdl-layout-title">PappApp</span>
+		    <nav class="mdl-navigation">
+		      <a class="mdl-navigation__link" href="/">Home</a>
+		      <a class="mdl-navigation__link" href="/sessions">Sessions</a>
+		      <a class="mdl-navigation__link" href="/ranking">Ranking</a>
+		    </nav>
+		  </div>
+		  <main class="mdl-layout__content">
+				<div class="page-content">
+					{{#if currentUser}}
+			    	{{> yield}}
+					{{else}}
+						<div>Login First</div>
+					{{/if}}
+				</div>
+		  </main>
+		</div>
+	</body>
+</template>

@@ -1,13 +1,15 @@
-Meteor.subscribe('sessionPlayers');
-Meteor.subscribe('runningSession');
-Meteor.subscribe('sessionGames');
+Template.home.onCreated(function(){
+  Meteor.subscribe('sessionPlayers');
+  Meteor.subscribe('runningSession');
+  Meteor.subscribe('sessionGames');
+});
 Template.home.helpers({
   runningSession: function() {
-    return Sessions.findOne({ended: {$exists: false}});
+    return PA.Sessions.findOne({ended: {$exists: false}});
   },
   sessionGames: function() {
     var session = Sessions.findOne({ended: {$exists: false}}),
-        games = Games.find({sessionId: session._id, 'players.playerId': this._id}).fetch(),
+        games = PA.Games.find({sessionId: session._id, 'players.playerId': this._id}).fetch(),
         playerScores = [],
         self = this;
     _.map(games, function(game) {
