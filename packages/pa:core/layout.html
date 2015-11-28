@@ -20,7 +20,13 @@
 		    </nav>
 		  </div>
 		  <main class="mdl-layout__content">
-		    <div class="page-content">{{> yield}}</div>
+				<div class="page-content">
+					{{#if currentUser}}
+			    	{{> yield}}
+					{{else}}
+						<div>Login First</div>
+					{{/if}}
+				</div>
 		  </main>
 		</div>
 	</body>

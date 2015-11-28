@@ -25,6 +25,7 @@ Package.onUse(function(api) {
     'pa:home',
     'pa:leaderboards',
     'pa:player',
+    'pa:profile',
     'pa:session'
   ]);
 });

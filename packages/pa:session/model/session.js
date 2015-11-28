@@ -30,13 +30,24 @@ PA.Sessions = Sessions;
 if (Meteor.isServer) {
   var count = 1;
   Meteor.publish('runningSession', function() {
-    return Sessions.find({ ended: { $exists: false } });
+    var currentUser = this.userId;
+    return Sessions.find({
+      createdBy: currentUser,
+      ended: { $exists: false }
+    });
   });
   Meteor.publish('endedSessions', function() {
-    return Sessions.find({ ended: true });
+    var currentUser = this.userId;
+    return Sessions.find({
+      createdBy: currentUser,
+      ended: true,
+    });
   });
   Meteor.publish('allSessions', function() {
-    return Sessions.find({});
+    var currentUser = this.userId;
+    return Sessions.find({
+      createdBy: currentUser
+    });
   });
   Meteor.methods({
     createNewSession: function(sessionTitle, players, currentUser) {
