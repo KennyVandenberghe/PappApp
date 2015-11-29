@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'pa:app',
+  name: 'pa:profile',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -11,22 +11,31 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.1.0.2');
+  api.versionsFrom('1.2.1');
   var c = 'client',
       s = 'server',
       cs = [c, s];
 
-  api.imply([
-    'ui',
-    'templating',
-    'pa:button',
-    'pa:core',
-    'pa:game',
-    'pa:home',
-    'pa:leaderboards',
-    'pa:player',
-    'pa:profile',
-    'pa:app-ui',
-    'pa:session'
-  ]);
+      api.use([
+        'mongo'
+      ], cs);
+
+      api.use([
+        'pa:core',
+        'underscore',
+        'momentjs:moment',
+        'dburles:collection-helpers@1.0.2',
+        'sewdn:collection-behaviours@0.2.0'
+      ], cs);
+
+      api.use([
+        'ui',
+        'templating',
+        'iron:router',
+        'deps'
+      ], c);
+
+  api.addFiles([
+    'model/profile.js'
+  ], s);
 });

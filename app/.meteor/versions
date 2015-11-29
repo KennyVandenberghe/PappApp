@@ -63,6 +63,7 @@ npm-mongo@1.4.39_1
 observe-sequence@1.0.7
 ordered-dict@1.0.4
 pa:app@0.0.1
+pa:app-ui@0.0.1
 pa:button@0.0.1
 pa:core@0.0.1
 pa:game@0.0.1
