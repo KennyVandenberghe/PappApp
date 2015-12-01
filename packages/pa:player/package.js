@@ -31,7 +31,8 @@ Package.onUse(function(api) {
   api.use([
     'ui',
     'templating',
-    'iron:router'
+    'iron:router',
+    'percolate:velocityjs'
   ], c);
 
   api.addFiles([

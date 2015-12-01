@@ -4,20 +4,18 @@
       <input class="mdl-textfield__input" type="text" id="sessionTitle" value="{{sessionTitle}}" name="sessionTitle" />
       <label class="mdl-textfield__label" for="sessionTitle">Title...</label>
     </div>
-    {{#each players}}
-      <ul>
-        <li class="player {{selected}}">
-          <div>{{name}}</div>
-          {{#if selected}}
-            <span>
-              <button class="remove mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-      				  Remove player
-      				</button>
-            </span>
-          {{/if}}
-        </li>
-      </ul>
-    {{/each}}
+    <ul class="player-list">
+      {{#each players}}
+          <li class="player {{selected}}">
+            <div class="name">{{name}}</div>
+            <div class="icon">
+              {{#if selected}}
+                <i class="material-icons">check_circle</i>
+              {{/if}}
+            </div>
+          </li>
+      {{/each}}
+    </ul>
     {{> addPlayerForm}}
     <div class="button-container">
 			<button class="create new mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

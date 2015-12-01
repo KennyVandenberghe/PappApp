@@ -4,6 +4,7 @@ var playerIds = [],
 
 Template.createSession.onCreated(function(){
    Meteor.subscribe('allSessions');
+   Meteor.subscribe('sessionPlayers');
 });
 Template.createSession.helpers({
   players: function(){
@@ -13,7 +14,7 @@ Template.createSession.helpers({
     playersDep.depend();
     var playerId = this._id;
     if (playerIds.indexOf(playerId) !== -1) {
-      return 'selected';
+      return '-selected';
     }
   },
   sessionTitle: function() {

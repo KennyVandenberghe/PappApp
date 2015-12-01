@@ -72,6 +72,7 @@ pa:leaderboards@0.0.1
 pa:player@0.0.1
 pa:profile@0.0.1
 pa:session@0.0.1
+percolate:velocityjs@1.0.0
 promise@0.5.1
 random@1.0.5
 rate-limit@1.0.0
