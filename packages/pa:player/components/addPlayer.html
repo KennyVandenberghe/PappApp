@@ -2,17 +2,15 @@
   <div class="page-add-player _center">
   	{{#if currentUser}}
         <form>
-          <div class="add-wrapper">
-            {{#if showAddPlayer}}
-              <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-                <input class="mdl-textfield__input" type="text" id="playerName" name="playerName" />
-                <label class="mdl-textfield__label" for="playerName">playerName...</label>
-              </div>
-            {{/if}}
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="playerName" name="playerName" />
+            <label class="mdl-textfield__label" for="playerName">playerName...</label>
           </div>
-          <button class="add-button add-toggle mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
-            <i class="material-icons">add</i>
-          </button>
+          <div class="button-container">
+  	  			<button class="add mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  	  			  add player
+  	  			</button>
+  	  		</div>
         </form>
   	{{/if}}
   </div>

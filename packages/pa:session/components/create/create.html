@@ -16,11 +16,16 @@
           </li>
       {{/each}}
     </ul>
-    {{> addPlayerForm}}
-    <div class="button-container">
-			<button class="create new mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-			  Create new session
-			</button>
-		</div>
+    {{#if enoughPlayers}}
+      <div class="button-container">
+  			<button class="create new mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  			  Create new session
+  			</button>
+  		</div>
+    {{/if}}
+    <button class="add-button add-toggle mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+      <i class="material-icons">add</i>
+    </button>
+    {{> overlay}}
   </div>
 </template>

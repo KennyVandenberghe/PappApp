@@ -6,6 +6,10 @@ Template.createSession.onCreated(function(){
    Meteor.subscribe('allSessions');
    Meteor.subscribe('sessionPlayers');
 });
+
+Template.createSession.onRendered(function(){
+  
+});
 Template.createSession.helpers({
   players: function(){
     return Players.find({});
@@ -15,6 +19,12 @@ Template.createSession.helpers({
     var playerId = this._id;
     if (playerIds.indexOf(playerId) !== -1) {
       return '-selected';
+    }
+  },
+  enoughPlayers: function() {
+    playersDep.depend();
+    if (playerIds.length >= 2) {
+      return true;
     }
   },
   sessionTitle: function() {
@@ -57,5 +67,8 @@ Template.createSession.events({
     } else {
       return;
     }
+  },
+  'click .add-toggle': function(e, t) {
+    Overlay.open('addPlayerForm');
   }
 });

@@ -5,7 +5,7 @@
     height: 50px;
     position: relative;
     &:nth-child(odd) {
-      background-color: darken(white, 10%);
+      background-color: $main-color-darken;
     }
     &.player {
       @include display-flex();

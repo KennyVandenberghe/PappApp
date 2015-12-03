@@ -23,6 +23,9 @@ a {
 .page {
   padding: 24px 24px 0 24px;
 }
+.mdl-layout__header {
+  z-index: 1;
+}
 #login-buttons {
   .login-link-and-dropdown-list {
     .login-link-text {

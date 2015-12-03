@@ -1,4 +1,42 @@
 .add-wrapper {
   position: absolute;
-  bottom: 20px;
+  width: 100%;
+  left: 0;
+  top: calc(50% - 33px);
+}
+
+.layout-mask {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    position: fixed;
+    z-index: 11;
+    height: 100%;
+    background-color: $overlay-color;
+    opacity: 0.8 !important;
+    pointer-events: auto;
+}
+
+.overlay {
+  position: relative;
+  height: 200px;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: $main-color-darken;
+  box-shadow: $overlay-shadow;
+  z-index: 12;
+  @media(max-width: 500px) {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+  > .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: red;
+  }
 }
