@@ -8,6 +8,7 @@
 @import "components/buttons";
 @import "components/textfield";
 @import "components/login";
+@import "components/pages/create-session";
 @import "components/pages/add-player";
 @import "components/pages/home";
 
@@ -21,6 +22,9 @@ a {
 }
 .page {
   padding: 24px 24px 0 24px;
+}
+.mdl-layout__header {
+  z-index: 1;
 }
 #login-buttons {
   .login-link-and-dropdown-list {

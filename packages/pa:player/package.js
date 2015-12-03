@@ -17,6 +17,17 @@ Package.onUse(function(api) {
       cs = [c, s];
 
   api.use([
+    'ui',
+    'templating',
+    'iron:router',
+    'percolate:velocityjs',
+    'underscore',
+    'reactive-dict',
+    'reactive-var',
+    'session'
+  ], c);
+
+  api.use([
     'mongo'
   ], cs);
 
@@ -28,11 +39,6 @@ Package.onUse(function(api) {
     'sewdn:collection-behaviours@0.2.0'
   ], cs);
 
-  api.use([
-    'ui',
-    'templating',
-    'iron:router'
-  ], c);
 
   api.addFiles([
     'model/player.js'
@@ -41,8 +47,11 @@ Package.onUse(function(api) {
   api.addFiles([
     'components/addPlayer.html',
     'components/addPlayer.js',
+    'components/overlay.html',
+    'components/overlay.js',
     'router.js'
   ], c);
 
   api.export('Players');
+  api.export('Overlay');
 });

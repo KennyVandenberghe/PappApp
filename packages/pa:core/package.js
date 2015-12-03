@@ -19,11 +19,13 @@ Package.onUse(function(api) {
   api.use([
     'ui',
     'templating',
-    'iron:router'
+    'iron:router',
+    'session'
   ], c);
 
   api.addFiles([
     'layout.html',
+    'layout.js',
     'head.html'
   ], c);
 

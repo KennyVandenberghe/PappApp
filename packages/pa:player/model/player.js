@@ -38,7 +38,6 @@ if(Meteor.isServer) {
   Meteor.methods({
     insertPlayerData: function(name) {
       var currentUserId = Meteor.userId();
-      count++;
       if (name) {
         Players.insert({
           name: name,
@@ -64,5 +63,5 @@ if(Meteor.isServer) {
       Sessions.update({ _id: sessionId, 'players._id': selectedPlayer }, { $inc: { 'players.$.score': scoreValue } });
       Players.update({ _id: selectedPlayer, createdBy: currentUserId }, { $inc: { score: scoreValue } });
     }
-  });  
+  });
 }

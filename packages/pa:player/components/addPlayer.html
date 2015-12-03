@@ -1,15 +1,17 @@
 <template name="addPlayerForm">
-  <div class="page-add-player">
+  <div class="page-add-player _center">
   	{{#if currentUser}}
-      <form>
-        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="playerName" name="playerName" />
-          <label class="mdl-textfield__label" for="playerName">playerName...</label>
-        </div>
-  			<button class="create new mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-  			  Add player
-  			</button>
-      </form>
+        <form>
+          <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+            <input class="mdl-textfield__input" type="text" id="playerName" name="playerName" />
+            <label class="mdl-textfield__label" for="playerName">playerName...</label>
+          </div>
+          <div class="button-container">
+  	  			<button class="add mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  	  			  add player
+  	  			</button>
+  	  		</div>
+        </form>
   	{{/if}}
   </div>
 </template>

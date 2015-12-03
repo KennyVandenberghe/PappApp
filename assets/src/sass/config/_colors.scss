@@ -5,4 +5,7 @@ $white: #fff;
 $black: #000;
 
 $color-links: #000;
-$color-login: #fff;
+$overlay-color: #000;
+$overlay-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+$main-color: #fff;
+$main-color-darken: darken($main-color, 10%);
