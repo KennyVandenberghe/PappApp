@@ -13,7 +13,32 @@ PA.registerNamespace('player', Players);
 CollectionBehaviours.extendCollectionInstance(Players);
 
 PA.Model.Player = {
-
+  gamesWon: function() {
+    var playerId = this._id,
+        count = 0;
+    _.each(PA.Games.find({}).fetch(), function(game) {
+      if (game.getWinner().playerId === playerId) {
+        count++;
+      }
+    });
+    return count;
+  },
+  sessionsWon: function() {
+    var playerId = this._id,
+        count = 0;
+    _.each(PA.Sessions.find({}).fetch(), function(session) {
+      if (session.getWinner()._id === playerId) {
+        count++;
+      }
+    });
+    return count;
+  },
+  totalGames: function() {
+    return PA.Games.find({'players.playerId': this._id}).count();
+  },
+  totalSessions: function() {
+    return PA.Sessions.find({'players._id': this._id}).count();
+  }
 };
 
 Players.helpers(PA.Model.Player);

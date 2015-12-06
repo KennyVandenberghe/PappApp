@@ -1,5 +1,7 @@
 Template.ranking.onCreated(function(){
    Meteor.subscribe('sessionPlayers');
+   Meteor.subscribe('allSessions');
+   Meteor.subscribe('allGames');
 });
 
 Template.ranking.helpers({

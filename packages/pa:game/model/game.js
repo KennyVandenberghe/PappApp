@@ -11,7 +11,23 @@ PA.registerNamespace('game', Games);
 CollectionBehaviours.extendCollectionInstance(Games);
 
 PA.Model.Game = {
-
+  getWinner: function() {
+    var playerScore;
+        winner;
+    _.each(this.players, function(player) {
+      if (!! playerScore && playerScore < player.score) {
+        playerScore = playerScore;
+      } else {
+        playerScore = player.score;
+      }
+    });
+    _.find(this.players, function(player) {
+      if (!! playerScore && player.score === playerScore) {
+        winner = player;
+      }
+    });
+    return winner;
+  }
 };
 
 Games.helpers(PA.Model.Game);
@@ -32,6 +48,9 @@ if(Meteor.isServer) {
     if (!! session && !! session._id) {
       return Games.find({sessionId: session._id});
     }
+  });
+  Meteor.publish('allGames', function() {
+    return Games.find({});
   });
 
   Meteor.methods({

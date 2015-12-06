@@ -103,6 +103,50 @@
     display: block;
     text-align: center; }
 
+.page-ranking {
+  max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto; }
+  .page-ranking > .mdl-card {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center; }
+    .page-ranking > .mdl-card > .main-info {
+      -webkit-flex: 1 60%;
+      flex: 1 60%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      border-right: 1px solid gainsboro; }
+      .page-ranking > .mdl-card > .main-info > .player {
+        -webkit-flex: 1 60%;
+        flex: 1 60%; }
+        .page-ranking > .mdl-card > .main-info > .player div {
+          font-size: 1.4em; }
+      .page-ranking > .mdl-card > .main-info > .games {
+        -webkit-flex: 1 20%;
+        flex: 1 20%; }
+        .page-ranking > .mdl-card > .main-info > .games div {
+          font-size: 1.2em; }
+      .page-ranking > .mdl-card > .main-info > .sessions {
+        -webkit-flex: 1 20%;
+        flex: 1 20%; }
+        .page-ranking > .mdl-card > .main-info > .sessions div {
+          font-size: 1.2em; }
+    .page-ranking > .mdl-card > .sub-info {
+      -webkit-flex: 1 40%;
+      flex: 1 40%;
+      height: 100%;
+      text-align: center;
+      font-size: 3em; }
+
+.mdl-card {
+  width: auto; }
+
 body {
   background-color: #fff;
   color: #000; }

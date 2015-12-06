@@ -11,7 +11,23 @@ PA.registerNamespace('session', Sessions);
 CollectionBehaviours.extendCollectionInstance(Sessions);
 
 PA.Model.Session = {
-
+  getWinner: function() {
+    var playerScore;
+        winner;
+    _.each(this.players, function(player) {
+      if (!! playerScore && playerScore < player.score) {
+        playerScore = playerScore;
+      } else {
+        playerScore = player.score;
+      }
+    });
+    _.find(this.players, function(player) {
+      if (!! playerScore && player.score === playerScore) {
+        winner = player;
+      }
+    });
+    return winner;
+  }
 };
 
 Sessions.helpers(PA.Model.Session);
