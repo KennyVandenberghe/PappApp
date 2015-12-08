@@ -27,6 +27,10 @@ PA.Model.Session = {
       }
     });
     return winner;
+  },
+  getSessionPlayers: function() {
+    console.log(Sessions.findOne(this._id).players);
+    return Sessions.findOne(this._id).players;
   }
 };
 

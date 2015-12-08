@@ -145,7 +145,117 @@
       font-size: 3em; }
 
 .mdl-card {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  text-align: center; }
+  .mdl-card .top {
+    -webkit-flex: 0 0 30px;
+    flex: 0 0 30px;
+    font-size: 1.5rem;
+    padding-top: 5px;
+    border-bottom: 1px solid gainsboro; }
+  .mdl-card .bottom {
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+    display: -webkit-flex;
+    display: flex; }
+    .mdl-card .bottom .left {
+      -webkit-flex: 1;
+      flex: 1;
+      display: -webkit-flex;
+      display: flex;
+      border-right: 1px solid gainsboro; }
+      .mdl-card .bottom .left > .winner-info {
+        -webkit-flex: 1 70%;
+        flex: 1 70%;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-align-items: center;
+        align-items: center;
+        border-right: 1px solid gainsboro; }
+        .mdl-card .bottom .left > .winner-info > .title {
+          -webkit-flex: 0 0 50px;
+          flex: 0 0 50px;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-align-items: center;
+          align-items: center;
+          width: 100%;
+          font-size: 1.8rem;
+          border-bottom: 1px solid gainsboro; }
+          .mdl-card .bottom .left > .winner-info > .title span {
+            height: 100%;
+            width: 100%;
+            -webkit-align-self: center;
+            align-self: center; }
+        .mdl-card .bottom .left > .winner-info > .player {
+          -webkit-flex: 1 100%;
+          flex: 1 100%;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-align-items: center;
+          align-items: center;
+          width: 100%;
+          font-size: 1.6rem; }
+          .mdl-card .bottom .left > .winner-info > .player span {
+            height: 100%;
+            width: 100%;
+            -webkit-align-self: center;
+            align-self: center; }
+      .mdl-card .bottom .left > .winner-score {
+        -webkit-flex: 1 30%;
+        flex: 1 30%;
+        -webkit-align-self: center;
+        align-self: center;
+        padding: 5px;
+        font-size: 2rem; }
+    .mdl-card .bottom .right {
+      -webkit-flex: 1;
+      flex: 1;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column; }
+      .mdl-card .bottom .right > .player-record {
+        -webkit-flex: 1;
+        flex: 1;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-align-items: center;
+        align-items: center;
+        border-bottom: 1px solid gainsboro; }
+        .mdl-card .bottom .right > .player-record > .name {
+          -webkit-flex: 1 100%;
+          flex: 1 100%;
+          text-align: left;
+          padding-left: 10px; }
+        .mdl-card .bottom .right > .player-record > .score {
+          -webkit-flex: 0 0 50px;
+          flex: 0 0 50px;
+          padding-right: 10px;
+          text-align: right; }
+
+.mdl-card {
   width: auto; }
+
+html {
+  font-size: 18px; }
+  @media (max-width: 1400px) {
+    html {
+      font-size: 18px; } }
+  @media (max-width: 1200px) {
+    html {
+      font-size: 16px; } }
+  @media (max-width: 1024px) {
+    html {
+      font-size: 14px; } }
+  @media (max-width: 500px) {
+    html {
+      font-size: 12px; } }
 
 body {
   background-color: #fff;

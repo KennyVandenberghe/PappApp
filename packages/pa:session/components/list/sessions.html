@@ -2,7 +2,40 @@
   <div class="page page-sessions">
     <ul>
       {{#each sessions}}
-        <a href="/sessions/{{_id}}"><li class="session">{{title}}</li></a>
+        <a href="/sessions/{{_id}}">
+          <div class="mdl-card mdl-shadow--2dp">
+            <div class="top">
+              <div class="title">{{title}}</div>
+            </div>
+            <div class="bottom">
+              <div class="left">
+                <div class="winner-info">
+                  <div class="title">
+                    <span>Winner</span>
+                  </div>
+                  <div class="player">
+                    <span>{{getWinner.name}}</span>
+                  </div>
+                </div>
+                <div class="winner-score">
+                  {{getWinner.score}}
+                </div>
+              </div>
+              <div class="right">
+                {{#each getSessionPlayers}}
+                  <div class="player-record">
+                    <div class="name">
+                      {{name}}
+                    </div>
+                    <div class="score">
+                      {{score}}
+                    </div>
+                  </div>
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </a>
       {{/each}}
     </ul>
   </div>
