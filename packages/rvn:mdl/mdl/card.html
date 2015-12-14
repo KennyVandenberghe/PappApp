@@ -1,0 +1,30 @@
+<template name="mdlCard">
+  <div class="mdl-card mdl-shadow--2dp">
+    <div class="main-info">
+      {{#if title}}
+        <div class="title">
+          <div class="mdl-card__title mdl-card--expand">
+            <div class="mdl-card__title-text">{{title}}</div>
+          </div>
+        </div>
+      {{/if}}
+      <div class="sub-item">
+        <div class="mdl-card__supporting-text">
+          {{> UI.contentBlock}}
+        </div>
+      </div>
+    </div>
+      {{#if sub}}
+        <div class="sub-info mdl-card__supporting-text">
+          {{sub}}
+        </div>
+      {{/if}}
+      {{#if action}}
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            {{action}}
+          </a>
+        </div>
+      {{/if}}
+  </div>
+</template>

@@ -27,6 +27,7 @@ Package.onUse(function(api) {
     'pa:player',
     'pa:profile',
     'pa:app-ui',
-    'pa:session'
+    'pa:session',
+    'rvn:mdl'
   ]);
 });

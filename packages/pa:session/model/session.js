@@ -29,7 +29,6 @@ PA.Model.Session = {
     return winner;
   },
   getSessionPlayers: function() {
-    console.log(Sessions.findOne(this._id).players);
     return Sessions.findOne(this._id).players;
   }
 };
@@ -60,7 +59,7 @@ if (Meteor.isServer) {
     var currentUser = this.userId;
     return Sessions.find({
       createdBy: currentUser,
-      ended: true,
+      ended: true
     });
   });
   Meteor.publish('allSessions', function() {
@@ -79,7 +78,7 @@ if (Meteor.isServer) {
           player.score = 0;
           player.number = count++;
           return player;
-        })
+        });
         Sessions.insert({
           title: sessionTitle,
           createdAt: new Date(),
