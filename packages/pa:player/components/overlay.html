@@ -1,0 +1,14 @@
+<template name="overlay">
+	<div class="overlay-wrapper">
+		{{#if isOpen}}
+			<div class="overlay">
+				<div class="overlay-container">
+					{{> Template.dynamic template=renderTemplate}}
+				</div>
+				<button class="close mdl-button mdl-js-button mdl-button--icon mdl-button--colored">
+				  <i class='material-icons'>close</i>
+				</button>
+			</div>
+		{{/if}}
+	</div>
+</template>

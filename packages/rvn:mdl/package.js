@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'pa:app',
+  name: 'rvn:mdl',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -11,23 +11,19 @@ Package.describe({
 });
 
 Package.onUse(function(api) {
-  api.versionsFrom('1.1.0.2');
+  api.versionsFrom('1.2.1');
   var c = 'client',
       s = 'server',
       cs = [c, s];
 
-  api.imply([
+  api.use([
     'ui',
     'templating',
-    'pa:button',
-    'pa:core',
-    'pa:game',
-    'pa:home',
-    'pa:leaderboards',
-    'pa:player',
-    'pa:profile',
-    'pa:app-ui',
-    'pa:session',
-    'rvn:mdl'
-  ]);
+    'zodiase:mdl'
+  ], c);
+
+  api.addFiles([
+    'mdl/card.html',
+    'components/player-card.html'
+  ], c);
 });

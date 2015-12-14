@@ -122,21 +122,19 @@
       -webkit-flex-direction: column;
       flex-direction: column;
       border-right: 1px solid gainsboro; }
-      .page-ranking > .mdl-card > .main-info > .player {
+      .page-ranking > .mdl-card > .main-info > .title {
         -webkit-flex: 1 60%;
         flex: 1 60%; }
-        .page-ranking > .mdl-card > .main-info > .player div {
+        .page-ranking > .mdl-card > .main-info > .title div {
           font-size: 1.4em; }
-      .page-ranking > .mdl-card > .main-info > .games {
+      .page-ranking > .mdl-card > .main-info > .sub-item {
         -webkit-flex: 1 20%;
         flex: 1 20%; }
-        .page-ranking > .mdl-card > .main-info > .games div {
+        .page-ranking > .mdl-card > .main-info > .sub-item div {
           font-size: 1.2em; }
-      .page-ranking > .mdl-card > .main-info > .sessions {
-        -webkit-flex: 1 20%;
-        flex: 1 20%; }
-        .page-ranking > .mdl-card > .main-info > .sessions div {
-          font-size: 1.2em; }
+          .page-ranking > .mdl-card > .main-info > .sub-item div span {
+            display: block;
+            line-height: 3em; }
     .page-ranking > .mdl-card > .sub-info {
       -webkit-flex: 1 40%;
       flex: 1 40%;

@@ -1,28 +1,7 @@
 <template name="ranking">
   <div class="page page-ranking">
     {{#each players}}
-      <div class="mdl-card mdl-shadow--2dp">
-        <div class="main-info">
-          <div class="player">
-            <div class="mdl-card__title mdl-card--expand">
-              <div class="mdl-card__title-text">{{name}}</div>
-            </div>
-          </div>
-          <div class="games">
-            <div class="mdl-card__supporting-text">
-              Games won: {{gamesWon}} / {{totalGames}}
-            </div>
-          </div>
-          <div class="sessions">
-            <div class="mdl-card__supporting-text">
-              Sessions won: {{sessionsWon}} / {{totalSessions}}
-            </div>
-          </div>
-        </div>
-        <div class="sub-info mdl-card__supporting-text">
-          {{score}}
-        </div>
-      </div>
+      {{> playerCard}}
       <br>
     {{/each}}
   </div>
