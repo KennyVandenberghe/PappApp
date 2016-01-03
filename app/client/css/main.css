@@ -29,7 +29,8 @@
           font-size: 1.4em; }
 
 .button-container {
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 20px; }
 
 .add-button {
   position: fixed;
@@ -107,65 +108,34 @@
   max-width: 1024px;
   margin-left: auto;
   margin-right: auto; }
-  .page-ranking > .mdl-card {
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-align-items: center;
-    align-items: center; }
-    .page-ranking > .mdl-card > .main-info {
-      -webkit-flex: 1 60%;
-      flex: 1 60%;
-      display: -webkit-flex;
-      display: flex;
-      -webkit-flex-direction: column;
-      flex-direction: column;
-      border-right: 1px solid gainsboro; }
-      .page-ranking > .mdl-card > .main-info > .title {
-        -webkit-flex: 1 60%;
-        flex: 1 60%; }
-        .page-ranking > .mdl-card > .main-info > .title div {
-          font-size: 1.4em; }
-      .page-ranking > .mdl-card > .main-info > .sub-item {
-        -webkit-flex: 1 20%;
-        flex: 1 20%; }
-        .page-ranking > .mdl-card > .main-info > .sub-item div {
-          font-size: 1.2em; }
-          .page-ranking > .mdl-card > .main-info > .sub-item div span {
-            display: block;
-            line-height: 3em; }
-    .page-ranking > .mdl-card > .sub-info {
-      -webkit-flex: 1 40%;
-      flex: 1 40%;
-      height: 100%;
-      text-align: center;
-      font-size: 3em; }
 
-.mdl-card {
+.page-sessions .mdl-card {
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
   text-align: center; }
-  .mdl-card .top {
+  .page-sessions .mdl-card .top {
     -webkit-flex: 0 0 30px;
     flex: 0 0 30px;
     font-size: 1.5rem;
     padding-top: 5px;
     border-bottom: 1px solid gainsboro; }
-  .mdl-card .bottom {
+    .page-sessions .mdl-card .top > .title {
+      margin-left: auto;
+      margin-right: auto; }
+  .page-sessions .mdl-card .bottom {
     -webkit-flex: 1 100%;
     flex: 1 100%;
     display: -webkit-flex;
     display: flex; }
-    .mdl-card .bottom .left {
+    .page-sessions .mdl-card .bottom .left {
       -webkit-flex: 1;
       flex: 1;
       display: -webkit-flex;
       display: flex;
       border-right: 1px solid gainsboro; }
-      .mdl-card .bottom .left > .winner-info {
+      .page-sessions .mdl-card .bottom .left > .winner-info {
         -webkit-flex: 1 70%;
         flex: 1 70%;
         display: -webkit-flex;
@@ -175,7 +145,7 @@
         -webkit-align-items: center;
         align-items: center;
         border-right: 1px solid gainsboro; }
-        .mdl-card .bottom .left > .winner-info > .title {
+        .page-sessions .mdl-card .bottom .left > .winner-info > .title {
           -webkit-flex: 0 0 50px;
           flex: 0 0 50px;
           display: -webkit-flex;
@@ -185,12 +155,12 @@
           width: 100%;
           font-size: 1.8rem;
           border-bottom: 1px solid gainsboro; }
-          .mdl-card .bottom .left > .winner-info > .title span {
+          .page-sessions .mdl-card .bottom .left > .winner-info > .title span {
             height: 100%;
             width: 100%;
             -webkit-align-self: center;
             align-self: center; }
-        .mdl-card .bottom .left > .winner-info > .player {
+        .page-sessions .mdl-card .bottom .left > .winner-info > .player {
           -webkit-flex: 1 100%;
           flex: 1 100%;
           display: -webkit-flex;
@@ -199,26 +169,26 @@
           align-items: center;
           width: 100%;
           font-size: 1.6rem; }
-          .mdl-card .bottom .left > .winner-info > .player span {
+          .page-sessions .mdl-card .bottom .left > .winner-info > .player span {
             height: 100%;
             width: 100%;
             -webkit-align-self: center;
             align-self: center; }
-      .mdl-card .bottom .left > .winner-score {
+      .page-sessions .mdl-card .bottom .left > .winner-score {
         -webkit-flex: 1 30%;
         flex: 1 30%;
         -webkit-align-self: center;
         align-self: center;
         padding: 5px;
         font-size: 2rem; }
-    .mdl-card .bottom .right {
+    .page-sessions .mdl-card .bottom .right {
       -webkit-flex: 1;
       flex: 1;
       display: -webkit-flex;
       display: flex;
       -webkit-flex-direction: column;
       flex-direction: column; }
-      .mdl-card .bottom .right > .player-record {
+      .page-sessions .mdl-card .bottom .right > .player-record {
         -webkit-flex: 1;
         flex: 1;
         display: -webkit-flex;
@@ -226,12 +196,12 @@
         -webkit-align-items: center;
         align-items: center;
         border-bottom: 1px solid gainsboro; }
-        .mdl-card .bottom .right > .player-record > .name {
+        .page-sessions .mdl-card .bottom .right > .player-record > .name {
           -webkit-flex: 1 100%;
           flex: 1 100%;
           text-align: left;
           padding-left: 10px; }
-        .mdl-card .bottom .right > .player-record > .score {
+        .page-sessions .mdl-card .bottom .right > .player-record > .score {
           -webkit-flex: 0 0 50px;
           flex: 0 0 50px;
           padding-right: 10px;
@@ -239,6 +209,71 @@
 
 .mdl-card {
   width: auto; }
+
+.mdl-card {
+  position: relative;
+  margin-bottom: 20px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column; }
+  .mdl-card > .top-section {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex: 1 80%;
+    flex: 1 80%;
+    width: 100%; }
+    .mdl-card > .top-section > .main-info {
+      -webkit-flex: 1 60%;
+      flex: 1 60%;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex-direction: column;
+      flex-direction: column;
+      border-right: 1px solid gainsboro; }
+      .mdl-card > .top-section > .main-info > .title {
+        -webkit-flex: 1 60%;
+        flex: 1 60%; }
+        .mdl-card > .top-section > .main-info > .title div {
+          font-size: 1.4em; }
+      .mdl-card > .top-section > .main-info > .sub-item {
+        -webkit-flex: 1 20%;
+        flex: 1 20%; }
+        .mdl-card > .top-section > .main-info > .sub-item div {
+          font-size: 1.2em; }
+          .mdl-card > .top-section > .main-info > .sub-item div span {
+            display: block;
+            line-height: 3em; }
+    .mdl-card > .top-section > .sub-info {
+      -webkit-flex: 1 40%;
+      flex: 1 40%;
+      height: 100%;
+      text-align: center;
+      font-size: 2em; }
+  .mdl-card > .bottom-section {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex: 1 20%;
+    flex: 1 20%;
+    border-top: 1px solid gainsboro;
+    width: 100%; }
+    .mdl-card > .bottom-section > .point-list {
+      display: -webkit-flex;
+      display: flex;
+      -webkit-flex: 0 100%;
+      flex: 0 100%;
+      padding: 0 10px 0 10px; }
+      .mdl-card > .bottom-section > .point-list > .item {
+        -webkit-flex: 0 15%;
+        flex: 0 15%; }
 
 html {
   font-size: 18px; }

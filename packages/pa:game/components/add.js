@@ -1,3 +1,7 @@
+Template.addGame.onCreated(function(){
+   Meteor.subscribe('runningSession');
+});
+
 Template.addGame.helpers({
   showSelectedPlayer: function() {
     var selectedPlayer = Session.get('selectedPlayer');
@@ -41,5 +45,6 @@ Template.addGame.events({
       $('[name=Score' + player.number + ']').val(0);
     });
     Meteor.call('insertGame', sessionId, players);
+    Router.go('/');
   }
 });

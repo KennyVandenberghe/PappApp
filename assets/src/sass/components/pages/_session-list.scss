@@ -1,0 +1,85 @@
+.page-sessions {
+  .mdl-card {
+    @include display-flex();
+    @include flex-direction(column);
+    text-align: center;
+    .top {
+      @include flex(0 0 30px);
+      font-size: 1.5rem;
+      padding-top: 5px;
+      border-bottom: 1px solid gainsboro;
+      > .title {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+    .bottom {
+      @include flex(1 100%);
+      @include display-flex();
+      .left {
+        @include flex(1);
+        @include display-flex();
+        border-right: 1px solid gainsboro;
+        > .winner-info {
+          @include flex(1 70%);
+          @include display-flex();
+          @include flex-direction(column);
+          @include align-items(center);
+          border-right: 1px solid gainsboro;
+          > .title {
+            @include flex(0 0 50px);
+            @include display-flex();
+            @include align-items(center);
+            width: 100%;
+            font-size: 1.8rem;
+            border-bottom: 1px solid gainsboro;
+            span {
+              height: 100%;
+              width: 100%;
+              @include align-self(center);
+            }
+          }
+          > .player {
+            @include flex(1 100%);
+            @include display-flex();
+            @include align-items(center);
+            width: 100%;
+            font-size: 1.6rem;
+            span {
+              height: 100%;
+              width: 100%;
+              @include align-self(center);
+            }
+          }
+        }
+        > .winner-score {
+          @include flex(1 30%);
+          @include align-self(center);
+          padding: 5px;
+          font-size: 2rem;
+        }
+      }
+      .right {
+        @include flex(1);
+        @include display-flex();
+        @include flex-direction(column);
+        > .player-record {
+          @include flex(1);
+          @include display-flex();
+          @include align-items(center);
+          border-bottom: 1px solid gainsboro;
+          > .name {
+            @include flex(1 100%);
+            text-align: left;
+            padding-left: 10px;
+          }
+          > .score {
+            @include flex(0 0 50px);
+            padding-right: 10px;
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

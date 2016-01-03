@@ -1,0 +1,60 @@
+.mdl-card {
+  width: auto;
+}
+.mdl-card {
+  position: relative;
+  margin-bottom: 20px;
+  @include display-flex();
+  @include flex-direction(column);
+  > .top-section {
+    @include display-flex();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex(1 80%);
+    width: 100%;
+    > .main-info {
+      @include flex(1 60%);
+      @include display-flex();
+      @include flex-direction(column);
+      border-right: 1px solid gainsboro;
+      > .title {
+        @include flex(1 60%);
+        div {
+          font-size: 1.4em;
+        }
+      }
+      > .sub-item {
+        @include flex(1 20%);
+        div {
+          font-size: 1.2em;
+          span {
+            display    : block;
+            line-height: 3em;
+          }
+        }
+      }
+    }
+    > .sub-info {
+      @include flex(1 40%);
+      height    : 100%;
+      text-align: center;
+      font-size : 2em;
+    }
+  }
+  > .bottom-section {
+    @include display-flex();
+    @include flex-direction(row);
+    @include align-items(center);
+    @include flex(1 20%);
+    border-top: 1px solid gainsboro;
+    width: 100%;
+    > .point-list {
+      @include display-flex();
+      @include flex(0 100%);
+      padding: 0 10px 0 10px;
+      > .item {
+        @include flex(0 15%);
+      }
+    }
+  }
+}
