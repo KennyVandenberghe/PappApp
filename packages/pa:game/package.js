@@ -41,6 +41,8 @@ Package.onUse(function(api) {
   api.addFiles([
     'components/add.html',
     'components/add.js',
+    'components/scoreField.html',
+    'components/scoreField.js',
     'router.js'
   ], c);
 
