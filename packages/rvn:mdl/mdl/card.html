@@ -1,5 +1,5 @@
 <template name="mdlCard">
-  <div class="mdl-card mdl-shadow--2dp">
+  <div class="mdl-card mdl-shadow--2dp {{classes}}">
     <div class="top-section">
       <div class="main-info">
         {{#if title}}
@@ -20,6 +20,15 @@
       {{#if sub}}
         <div class="sub-info mdl-card__supporting-text">
           {{sub}}
+        </div>
+      {{/if}}
+      {{#if score}}
+        <div class="sub-info mdl-card__supporting-text">
+          {{score}} <span class="add-score" name="Score{{data.number}}" value=0></span>
+        </div>
+        {{else}}
+        <div class="sub-info mdl-card__supporting-text">
+          0 <span class="add-score" name="Score{{data.number}}" value=0></span>
         </div>
       {{/if}}
     </div>

@@ -1,7 +1,5 @@
 .mdl-card {
   width: auto;
-}
-.mdl-card {
   position: relative;
   margin-bottom: 20px;
   @include display-flex();
@@ -39,6 +37,12 @@
       height    : 100%;
       text-align: center;
       font-size : 2em;
+      > .negative {
+        color: red;
+      }
+      > .positive {
+        color: green;
+      }
     }
   }
   > .bottom-section {

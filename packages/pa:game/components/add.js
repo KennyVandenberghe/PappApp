@@ -1,11 +1,15 @@
 Template.addGame.onCreated(function(){
    Meteor.subscribe('runningSession');
+   Meteor.subscribe('sessionPlayers');
+   Session.setDefault('selectedPlayer', "");
 });
 
 Template.addGame.helpers({
   showSelectedPlayer: function() {
     var selectedPlayer = Session.get('selectedPlayer');
-    return Players.findOne(selectedPlayer);
+    if (!! selectedPlayer) {
+      return true;
+    }
   },
   selectedClass: function() {
     var playerId = this._id,
@@ -21,20 +25,21 @@ Template.addGame.helpers({
 
 Template.addGame.events({
   'click .player': function() {
-    var playerId = this._id,
+    var playerId = this.data._id,
     currentSelectedPlayer = Session.get('selectedPlayer');
     if (currentSelectedPlayer === playerId) {
       Session.set('selectedPlayer', '');
     } else {
       Session.set('selectedPlayer', playerId);
     }
+    Overlay.open('scoreField', this);
   },
   'click .add-game': function() {
     var players = [],
         session = Sessions.findOne({ended: {$exists: false}}),
         sessionId = session._id;
     _.each(session.players, function(player) {
-      var playerScore = parseInt($('[name=Score' + player.number + ']').val()),
+      var playerScore = parseInt($('[name=Score' + player.number + ']').text()),
           p = _.extend({}, {
             playerId: player._id,
             name: player.name,
@@ -46,5 +51,40 @@ Template.addGame.events({
     });
     Meteor.call('insertGame', sessionId, players);
     Router.go('/');
+  }
+});
+
+Template.scoreField.helpers({
+  selectedPlayer: function() {
+    var selectedPlayer = Session.get('selectedPlayer');
+    if (!! selectedPlayer) {
+      return Players.findOne({_id: selectedPlayer});
+    }
+  }
+});
+
+Template.scoreField.events({
+  'click .add': function(e) {
+    var selectedPlayer = Session.get('selectedPlayer'),
+        sessionPlayers = Sessions.findOne({ended: {$exists: false}}).players
+        player = _.find(sessionPlayers, function(player) {
+          return player._id === selectedPlayer;
+        }),
+        playerNumber = player.number,
+        value = parseInt($('[name=valueField]').val());
+    $('[name=Score' + playerNumber + ']').text(value);
+    $('[name=valueField]').val('');
+    storedValue = 0;
+    if ($('[name=Score' + playerNumber + ']').text().indexOf('-') != -1) {
+      $('[name=Score' + playerNumber + ']').removeClass('negative');
+      $('[name=Score' + playerNumber + ']').addClass('positive');
+    } else {
+      $('[name=Score' + playerNumber + ']').prepend('+');
+      $('[name=Score' + playerNumber + ']').removeClass('positive');
+      $('[name=Score' + playerNumber + ']').addClass('negative');
+    }
+    Session.set('selectedPlayer', '');
+    // Meteor.call('addGameToSession', selectedPlayer, session, value);
+    Overlay.close();
   }
 });
