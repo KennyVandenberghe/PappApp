@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'pa:app',
+  name: 'rvn:overlay',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -16,19 +16,29 @@ Package.onUse(function(api) {
       s = 'server',
       cs = [c, s];
 
-  api.imply([
-    'ui',
+  api.use([
     'templating',
-    'pa:button',
+    'percolate:velocityjs',
+    'underscore',
+    'reactive-dict',
+    'reactive-var',
+    'session'
+  ], c);
+
+  api.use([
+    'mongo'
+  ], cs);
+
+  api.use([
     'pa:core',
-    'pa:game',
-    'pa:home',
-    'pa:leaderboards',
-    'pa:player',
-    'pa:profile',
-    'pa:app-ui',
-    'pa:session',
-    'rvn:mdl',
-    'rvn:overlay'
-  ]);
+    'underscore',
+    'momentjs:moment'
+  ], cs);
+
+  api.addFiles([
+    'components/overlay.html',
+    'components/overlay.js'
+  ], c);
+
+  api.export('Overlay');
 });
