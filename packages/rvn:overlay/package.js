@@ -1,5 +1,5 @@
 Package.describe({
-  name: 'pa:game',
+  name: 'rvn:overlay',
   version: '0.0.1',
   // Brief, one-line summary of the package.
   summary: '',
@@ -17,34 +17,28 @@ Package.onUse(function(api) {
       cs = [c, s];
 
   api.use([
+    'templating',
+    'percolate:velocityjs',
+    'underscore',
+    'reactive-dict',
+    'reactive-var',
+    'session'
+  ], c);
+
+  api.use([
     'mongo'
   ], cs);
 
   api.use([
     'pa:core',
     'underscore',
-    'momentjs:moment',
-    'dburles:collection-helpers@1.0.2',
-    'sewdn:collection-behaviours@0.2.0'
-  ], cs);
-
-  api.use([
-    'ui',
-    'templating',
-    'iron:router'
-  ], c);
-
-  api.addFiles([
-    'model/game.js'
+    'momentjs:moment'
   ], cs);
 
   api.addFiles([
-    'components/add.html',
-    'components/add.js',
-    'components/scoreField.html',
-    'components/scoreField.js',
-    'router.js'
+    'components/overlay.html',
+    'components/overlay.js'
   ], c);
 
-  api.export('Games');
+  api.export('Overlay');
 });

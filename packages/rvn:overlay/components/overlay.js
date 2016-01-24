@@ -13,7 +13,7 @@ _.extend(OverlayClass.prototype, {
 	},
 	open: function(tpl, options) {
     Session.set('showMask', true);
-		this.tpl.set(tpl);
+		this.tpl.set(tpl, options); //options were not included at first
 	},
 	close: function() {
     Session.set('showMask', false);

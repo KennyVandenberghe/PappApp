@@ -1,0 +1,12 @@
+<template name="scoreField">
+  {{#with selectedPlayer}}
+  {{name}}
+    <div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input class="mdl-textfield__input" type="text" id="valueField" name="valueField" value="0" />
+      <label class="mdl-textfield__label" for="valueField">Value...</label>
+    </div>
+    <button class="add mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      Add game
+    </button>
+  {{/with}}
+</template>

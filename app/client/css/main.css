@@ -78,11 +78,12 @@
   pointer-events: auto; }
 
 .overlay {
-  position: relative;
-  height: 200px;
+  position: absolute;
+  left: 10%;
+  height: auto;
+  padding: 20px 10px 20px 10px;
   width: 80%;
-  margin-left: auto;
-  margin-right: auto;
+  bottom: 0;
   background-color: #e6e6e6;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 12; }
@@ -208,9 +209,7 @@
           text-align: right; }
 
 .mdl-card {
-  width: auto; }
-
-.mdl-card {
+  width: auto;
   position: relative;
   margin-bottom: 20px;
   display: -webkit-flex;
@@ -254,6 +253,10 @@
       height: 100%;
       text-align: center;
       font-size: 2em; }
+      .mdl-card > .top-section > .sub-info > .negative {
+        color: red; }
+      .mdl-card > .top-section > .sub-info > .positive {
+        color: green; }
   .mdl-card > .bottom-section {
     display: -webkit-flex;
     display: flex;
@@ -291,7 +294,7 @@ html {
       font-size: 12px; } }
 
 body {
-  background-color: #fff;
+  background-color: #F5F5F5;
   color: #000; }
 
 a {

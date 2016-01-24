@@ -1,21 +1,14 @@
 <template name="addGame">
-  {{#if showSelectedPlayer}}
-		{{> scoreButtons}}
-	{{/if}}
-	{{#with session}}
-		{{#each players}}
-			<ul>
-				<li class="player {{selectedClass}}">{{name}}: {{score}}</li>
-				<div class="mdl-cell mdl-cell--12-col mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="Score{{number}}" name="Score{{number}}" value="0" />
-          <label class="mdl-textfield__label" for="Score{{number}}">Score...</label>
-        </div>
-			</ul>
-		{{/each}}
-	{{/with}}
-	<div class="button-container">
-		<button class="add-game mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-			Add game
-		</button>
-	</div>
+  <div class="page page-add-player">
+  	{{#with session}}
+  		{{#each players}}
+        {{> playerGameCard}}
+  		{{/each}}
+  	{{/with}}
+  	<div class="button-container">
+  		<button class="add-game mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+  			Add game
+  		</button>
+  	</div>
+  </div>
 </template>

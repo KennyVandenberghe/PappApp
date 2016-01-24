@@ -82,7 +82,6 @@ if(Meteor.isServer) {
       Players.remove({ createdBy: currentUserId });
     },
     modifyPlayerScore: function(selectedPlayer, session, scoreValue) {
-      console.log(selectedPlayer, session, scoreValue);
       var currentUserId = Meteor.userId(),
           sessionId = session._id;
       Sessions.update({ _id: sessionId, 'players._id': selectedPlayer }, { $inc: { 'players.$.score': scoreValue } });

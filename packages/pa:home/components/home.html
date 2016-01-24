@@ -3,7 +3,7 @@
 		{{#if runningSession}}
 			{{#with runningSession}}
 				{{#each players}}
-					{{> mdlCard title=name sub=score games=sessionGames}}
+					{{> mdlCard title=name score=score games=sessionGames}}
 				{{/each}}
 				<div class="button-container">
 					<button class="add-game mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">

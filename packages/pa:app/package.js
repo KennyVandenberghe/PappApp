@@ -28,6 +28,7 @@ Package.onUse(function(api) {
     'pa:profile',
     'pa:app-ui',
     'pa:session',
-    'rvn:mdl'
+    'rvn:mdl',
+    'rvn:overlay'
   ]);
 });
