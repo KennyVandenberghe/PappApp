@@ -1,0 +1,21 @@
+$layout-mask-left           : 0 !default;
+$layout-mask-top            : 0 !default;
+$layout-mask-bottom         : 0 !default;
+$layout-mask-right          : 0 !default;
+$layout-mask-z-index        : 11 !default;
+$layout-mask-height         : 100% !default;
+$layout-mask-background     : $overlay-color !default;
+$layout-mask-opacity        : 0.8 !default;
+$layout-mask-pointer-events: auto !default;
+.layout-mask {
+    left            : $layout-mask-left;
+    top             : $layout-mask-top;
+    bottom          : $layout-mask-bottom;
+    right           : $layout-mask-right;
+    position        : fixed;
+    z-index         : $layout-mask-z-index;
+    height          : $layout-mask-height;
+    background-color: $layout-mask-background;
+    opacity         : $layout-mask-opacity !important;
+    pointer-events  : $layout-mask-pointer-events;
+}

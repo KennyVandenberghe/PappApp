@@ -1,8 +1,9 @@
+$message-margin-bottom: 20px !default;
 .page-home {
-  > .notification {
-    margin-bottom: 20px;
+  > .message {
+    margin-bottom: $message-margin-bottom;
     span {
-      display: block;
+      display   : block;
       text-align: center;
     }
   }

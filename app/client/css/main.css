@@ -54,36 +54,17 @@
     bottom: 0;
     width: 100%;
     height: 208px;
-    margin: auto;
-    margin-left: 100px; }
+    margin: auto auto auto 100px; }
     .login-container > .login > #login-buttons > .login-link-and-dropdown-list > .login-link-text {
       color: black; }
 
-.add-wrapper {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  top: calc(50% - 33px); }
-
-.layout-mask {
-  left: 0;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  position: fixed;
-  z-index: 11;
-  height: 100%;
-  background-color: #000;
-  opacity: 0.8 !important;
-  pointer-events: auto; }
-
 .overlay {
   position: absolute;
+  bottom: 0;
   left: 10%;
   height: auto;
-  padding: 20px 10px 20px 10px;
   width: 80%;
-  bottom: 0;
+  padding: 20px 10px 20px 10px;
   background-color: #e6e6e6;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   z-index: 12; }
@@ -97,18 +78,25 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    color: red; }
+    color: #B50101; }
 
-.page-home > .notification {
+.layout-mask {
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 11;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8 !important;
+  pointer-events: auto; }
+
+.page-home > .message {
   margin-bottom: 20px; }
-  .page-home > .notification span {
+  .page-home > .message span {
     display: block;
     text-align: center; }
-
-.page-ranking {
-  max-width: 1024px;
-  margin-left: auto;
-  margin-right: auto; }
 
 .page-sessions .mdl-card {
   display: -webkit-flex;
