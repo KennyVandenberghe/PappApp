@@ -42,15 +42,3 @@ a {
 .mdl-layout__header {
   z-index: 1;
 }
-#login-buttons {
-  .login-link-and-dropdown-list {
-    .login-link-text {
-      text-decoration: none;
-      color: $white;
-    }
-    #login-dropdown-list {
-      left: auto;
-      right: 0;
-    }
-  }
-}

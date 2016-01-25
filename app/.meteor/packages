@@ -19,6 +19,5 @@ ejson
 spacebars
 check
 accounts-password
-accounts-ui
 iron:router
 pa:app

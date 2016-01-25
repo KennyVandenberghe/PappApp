@@ -1,36 +1,28 @@
-$login-container-top                        : 0 !default;
-$login-container-left                       : 0 !default;
-$login-container-width                      : 100% !default;
-$login-container-height                     : 100% !default;
-$login-container-background                 : $main-color !default;
+$login-container-top         : calc(50% - 185px) !default;
+$login-container-left        : calc(50% - 185px) !default;
+$login-container-padding     : 10px !default;
+$login-container-width       : 350px !default;
+$login-container-height      : 350px !default;
+$login-container-background  : $main-color !default;
+$login-container_switch-color: $color-links !default;
 
-$login-container_login-top                  : 0 !default;
-$login-container_login-bottom               : 0 !default;
-$login-container_login-width                : 100% !default;
-$login-container_login-height               : 208px !default;
-$login-container_login-margin               : auto auto auto 100px !default;
-
-$login-container_login_login-link-text-color: black !default;
 .login-container {
   position        : absolute;
+  text-align      : center;
+  margin          : auto;
   top             : $login-container-top;
   left            : $login-container-left;
+  padding         : $login-container-padding;
   width           : $login-container-width;
   height          : $login-container-height;
   background-color: $login-container-background;
-  > .login {
-    position   : absolute;
-    top        : $login-container_login-top;
-    bottom     : $login-container_login-bottom;
-    width      : $login-container_login-width;
-    height     : $login-container_login-height;
-    margin     : $login-container_login-margin;
-    > #login-buttons {
-      > .login-link-and-dropdown-list {
-        > .login-link-text {
-          color: $login-container_login_login-link-text-color;
-        }
-      }
-    }
+  > .switch {
+    color: $login-container_switch-color;
+    text-decoration: underline;
+    display: block;
+  }
+  > .mdl-button {
+    // TODO refactor: create button class
+    margin-top: 20px;
   }
 }

@@ -20,9 +20,4 @@ Package.onUse(function(api) {
     'ui',
     'templating'
   ], c);
-
-  api.addFiles([
-    'components/login.html',
-    'components/login.js'
-  ], c);
 });

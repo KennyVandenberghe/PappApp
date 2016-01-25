@@ -34,6 +34,12 @@ Package.onUse(function(api) {
         'iron:router',
         'deps'
       ], c);
+  api.addFiles([
+    'components/register.html',
+    'components/login.html',
+    'components/loginContainer.html',
+    'components/loginContainer.js'
+  ], c);
 
   api.addFiles([
     'model/profile.js'
