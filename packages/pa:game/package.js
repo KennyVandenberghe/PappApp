@@ -43,6 +43,8 @@ Package.onUse(function(api) {
     'components/add.js',
     'components/scoreField.html',
     'components/scoreField.js',
+    'components/score.html',
+    'components/score.js',
     'router.js'
   ], c);
 

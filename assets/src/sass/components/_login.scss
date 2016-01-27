@@ -4,6 +4,7 @@ $login-container-padding     : 10px !default;
 $login-container-width       : 350px !default;
 $login-container-height      : 350px !default;
 $login-container-background  : $main-color !default;
+$login-container-shadow  : 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23) !default;
 $login-container_switch-color: $color-links !default;
 
 .login-container {
@@ -16,6 +17,7 @@ $login-container_switch-color: $color-links !default;
   width           : $login-container-width;
   height          : $login-container-height;
   background-color: $login-container-background;
+  box-shadow: $login-container-shadow;
   > .switch {
     color: $login-container_switch-color;
     text-decoration: underline;
