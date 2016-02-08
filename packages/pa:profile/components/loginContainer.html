@@ -1,0 +1,17 @@
+<template name="pappAppLogin">
+  <div class="login-container">
+    {{#if showLogin}}
+      {{> login}}
+      <a href="#" class="switch">Don't have an account?</a>
+      <button class="login mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        login
+      </button>
+    {{else}}
+      {{> register}}
+      <a href="#" class="switch">Already have an account?</a>
+      <button class="register mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        register
+      </button>
+    {{/if}}
+  </div>
+</template>
