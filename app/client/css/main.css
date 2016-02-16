@@ -95,17 +95,42 @@
 
 .action-picker {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
+  bottom: 1.4em;
+  right: 1.4em;
   z-index: 1; }
-
-.action-picker-sub {
-  position: absolute;
-  bottom: 25px;
-  right: 25px;
-  min-width: 46px;
-  width: 46px;
-  height: 46px; }
+  .action-picker > .action-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto; }
+    .action-picker > .action-container i[class^='icon-i']::before {
+      vertical-align: text-top; }
+    .action-picker > .action-container.sub {
+      margin-bottom: 0.7em;
+      margin-right: 0.4em; }
+    .action-picker > .action-container .main-action {
+      z-index: 2; }
+    .action-picker > .action-container .sub-action {
+      min-width: 1.9em;
+      width: 1.9em;
+      height: 1.9em; }
+    .action-picker > .action-container > .action-label {
+      -webkit-border-radius: 0.5em;
+      -moz-border-radius: 0.5em;
+      -ms-border-radius: 0.5em;
+      -o-border-radius: 0.5em;
+      border-radius: 0.5em;
+      position: absolute;
+      bottom: calc(50% - 10px);
+      right: 4.5em;
+      white-space: nowrap;
+      background-color: #000;
+      color: #fff;
+      height: 1.5em;
+      line-height: 1.5em;
+      padding: 0 10px;
+      opacity: 0; }
 
 .page-home > .message {
   margin-bottom: 20px; }

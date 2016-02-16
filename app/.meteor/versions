@@ -78,6 +78,7 @@ reactive-var@1.0.6
 reload@1.1.4
 retry@1.0.4
 routepolicy@1.0.6
+rvn:light@1.0.0
 rvn:mdl@0.0.1
 rvn:overlay@0.0.1
 service-configuration@1.0.5

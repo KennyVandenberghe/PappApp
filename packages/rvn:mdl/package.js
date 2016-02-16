@@ -19,11 +19,20 @@ Package.onUse(function(api) {
   api.use([
     'ui',
     'templating',
-    'zodiase:mdl'
+    'zodiase:mdl',
+    'percolate:velocityjs',
+    'reactive-var',
+    'rvn:light'
+  ], c);
+
+  api.use([
+    'underscore'
   ], c);
 
   api.addFiles([
     'mdl/card.html',
-    'components/player-card.html'
+    'components/player-card.html',
+    'components/actionPicker/actionPicker.html',
+    'components/actionPicker/actionPicker.js'
   ], c);
 });

@@ -27,14 +27,11 @@ Package.onUse(function(api) {
   api.use([
     'ui',
     'templating',
-    'iron:router@1.0.1',
-    'percolate:velocityjs'
+    'iron:router@1.0.1'
   ], c);
 
   api.addFiles([
-    'components/actionPicker.html',
-    'components/actionPicker.js',
-    'components/morphButton.html',
-    'components/morphButton.js'
+    //'components/morphButton.html',
+    //'components/morphButton.js'
   ], c);
 });
