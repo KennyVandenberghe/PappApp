@@ -1,0 +1,28 @@
+<template name="mdlActionPicker">
+  <div class="action-picker">
+    {{#with getMainItem}}
+    <div class="action-container">
+      <span class="action-label">{{title}}</span>
+      <a href="{{getUrl}}">
+        <button style="background-color: {{color}}" class="main-action mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+          {{#if isOpen}}
+          <i class="icon-i-{{openIcon}}"></i>
+          {{else}}
+          <i class="icon-i-{{closedIcon}}"></i>
+          {{/if}}
+        </button>
+      </a>
+    </div>
+    {{/with}}
+    {{#each getSubItems}}
+      <div class="action-container sub">
+        <span class="action-label">{{title}}</span>
+        <a href="{{getUrl}}">
+          <button style="background-color: {{color}}" class="sub-action mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+            <i class="icon-i-{{icon}}"></i>
+          </button>
+        </a>
+      </div>
+    {{/each}}
+  </div>
+</template>

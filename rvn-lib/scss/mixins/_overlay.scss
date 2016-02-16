@@ -1,0 +1,42 @@
+$overlay-bottom      : 0 !default;
+$overlay-left        : 10% !default;
+$overlay-height      : auto !default;
+$overlay-width       : 80% !default;
+$overlay-padding     : 20px 10px 20px 10px !default;
+$overlay-background  : $main-color-darken !default;
+$overlay-shadow      : $overlay-shadow !default;
+$overlay-z-index     : 12 !default;
+
+$overlay_phone-bottom: 0 !default;
+$overlay_phone-left  : 0 !default;
+$overlay_phone-width : 100% !default;
+
+$overlay_close-top   : 10px !default;
+$overlay_close-right : 10px !default;
+$overlay_close-color : #B50101 !default;
+
+@mixin overlay($height: $overlay-height, $width: $overlay-width) {
+  .overlay {
+    position        : absolute;
+    bottom          : $overlay-bottom;
+    left            : $overlay-left;
+    height          : $height;
+    width           : $width;
+    padding         : $overlay-padding;
+    background-color: $overlay-background;
+    box-shadow      : $overlay-shadow;
+    z-index         : $overlay-z-index;
+    @media(max-width: 500px) {
+      position: absolute;
+      bottom  : $overlay_phone-bottom;
+      left    : $overlay_phone-left;
+      width   : $overlay_phone-width;
+    }
+    > .close {
+      position: absolute;
+      top     : $overlay_close-top;
+      right   : $overlay_close-right;
+      color   : $overlay_close-color;
+    }
+  }
+}
