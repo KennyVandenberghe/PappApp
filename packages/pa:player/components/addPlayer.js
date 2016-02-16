@@ -8,6 +8,6 @@ Template.addPlayerForm.events({
       Meteor.call('insertPlayerData', playerName);
       event.target.playerName.value = '';
     }
-    Overlay.close();
+    Rvn.overlay.close();
   }
 });

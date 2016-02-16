@@ -6,12 +6,15 @@
 
 @import "helpers/helpers";
 
+//Rvn-lib
+@import "components/mdl/actionPicker";
+@import "components/overlay";
+
+//app level
 @import "components/list";
 @import "components/buttons";
 @import "components/login";
-@import "components/overlay";
 @import "components/layout-mask";
-@import "components/actionPicker";
 
 @import "components/pages/home";
 @import "components/pages/session-list";

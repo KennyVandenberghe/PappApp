@@ -13,7 +13,8 @@ gulp.task('sass', ['images'], function () {
       importer: nodeSassGlobbing,
       //sourcemap: true,
       includePaths: [
-        config.compassPath
+        config.compassPath,
+        '../rvn-lib/scss'
       ]
     }).on('error', handleErrors))
     // .pipe(sourcemaps.write(config.srcMaps, {

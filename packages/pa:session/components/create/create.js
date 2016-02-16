@@ -8,7 +8,7 @@ Template.createSession.onCreated(function(){
 });
 
 Template.createSession.onRendered(function(){
-  
+
 });
 Template.createSession.helpers({
   players: function(){
@@ -69,6 +69,6 @@ Template.createSession.events({
     }
   },
   'click .add-toggle': function(e, t) {
-    Overlay.open('addPlayerForm');
+    Rvn.overlay.open('addPlayerForm');
   }
 });

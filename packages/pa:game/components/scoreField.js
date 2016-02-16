@@ -29,6 +29,6 @@ Template.scoreField.events({
     }
     Session.set('selectedPlayer', '');
     // Meteor.call('addGameToSession', selectedPlayer, session, value);
-    Overlay.close();
+    Rvn.overlay.close();
   }
 });

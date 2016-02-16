@@ -1,6 +1,67 @@
 ._center {
   text-align: center !important; }
 
+.action-picker {
+  position: absolute;
+  bottom: 1.4em;
+  right: 1.4em;
+  z-index: 1; }
+  .action-picker > .action-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: auto;
+    height: auto; }
+    .action-picker > .action-container i[class^='icon-i']::before {
+      vertical-align: text-top; }
+    .action-picker > .action-container.sub {
+      margin-bottom: 0.7em;
+      margin-right: 0.4em; }
+    .action-picker > .action-container .main-action {
+      z-index: 2; }
+    .action-picker > .action-container .sub-action {
+      min-width: 1.9em;
+      width: 1.9em;
+      height: 1.9em; }
+    .action-picker > .action-container > .action-label {
+      -webkit-border-radius: 0.5em;
+      -moz-border-radius: 0.5em;
+      -ms-border-radius: 0.5em;
+      -o-border-radius: 0.5em;
+      border-radius: 0.5em;
+      position: absolute;
+      bottom: calc(50% - 10px);
+      right: 4.5em;
+      white-space: nowrap;
+      background-color: #000;
+      color: #fff;
+      height: 1.5em;
+      line-height: 1.5em;
+      padding: 0 10px;
+      opacity: 0; }
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  height: auto;
+  width: 80%;
+  padding: 20px 10px 20px 10px;
+  background-color: #e6e6e6;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  z-index: 12; }
+  @media (max-width: 500px) {
+    .overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%; } }
+  .overlay > .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #B50101; }
+
 .player-list {
   list-style: none;
   padding: 0; }
@@ -59,28 +120,6 @@
   .login-container > .mdl-button {
     margin-top: 20px; }
 
-.overlay {
-  position: absolute;
-  bottom: 0;
-  left: 10%;
-  height: auto;
-  width: 80%;
-  padding: 20px 10px 20px 10px;
-  background-color: #e6e6e6;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  z-index: 12; }
-  @media (max-width: 500px) {
-    .overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%; } }
-  .overlay > .close {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    color: #B50101; }
-
 .layout-mask {
   left: 0;
   top: 0;
@@ -92,45 +131,6 @@
   background-color: #000;
   opacity: 0.8 !important;
   pointer-events: auto; }
-
-.action-picker {
-  position: absolute;
-  bottom: 1.4em;
-  right: 1.4em;
-  z-index: 1; }
-  .action-picker > .action-container {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: auto;
-    height: auto; }
-    .action-picker > .action-container i[class^='icon-i']::before {
-      vertical-align: text-top; }
-    .action-picker > .action-container.sub {
-      margin-bottom: 0.7em;
-      margin-right: 0.4em; }
-    .action-picker > .action-container .main-action {
-      z-index: 2; }
-    .action-picker > .action-container .sub-action {
-      min-width: 1.9em;
-      width: 1.9em;
-      height: 1.9em; }
-    .action-picker > .action-container > .action-label {
-      -webkit-border-radius: 0.5em;
-      -moz-border-radius: 0.5em;
-      -ms-border-radius: 0.5em;
-      -o-border-radius: 0.5em;
-      border-radius: 0.5em;
-      position: absolute;
-      bottom: calc(50% - 10px);
-      right: 4.5em;
-      white-space: nowrap;
-      background-color: #000;
-      color: #fff;
-      height: 1.5em;
-      line-height: 1.5em;
-      padding: 0 10px;
-      opacity: 0; }
 
 .page-home > .message {
   margin-bottom: 20px; }

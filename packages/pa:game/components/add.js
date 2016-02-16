@@ -32,7 +32,7 @@ Template.addGame.events({
     } else {
       Session.set('selectedPlayer', playerId);
     }
-    Overlay.open('scoreField', this);
+    Rvn.overlay.open('scoreField', this);
   },
   'click .add-game': function() {
     var players = [],
