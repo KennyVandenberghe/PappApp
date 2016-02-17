@@ -1,0 +1,7 @@
+{
+  "packages": {
+    "rvn": {
+      "path": "rvn-lib/smart"
+    }
+  }
+}

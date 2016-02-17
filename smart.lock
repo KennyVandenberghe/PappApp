@@ -1,0 +1,24 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "rvn": {
+        "path": "rvn-lib/smart"
+      }
+    },
+    "packages": {
+      "rvn": {
+        "path": "rvn-lib/smart"
+      },
+      "rvn:light": {
+        "path": "rvn-lib/packages/rvn:light"
+      },
+      "rvn:mdl": {
+        "path": "rvn-lib/packages/rvn:mdl"
+      },
+      "rvn:overlay": {
+        "path": "rvn-lib/packages/rvn:overlay"
+      }
+    }
+  }
+}
