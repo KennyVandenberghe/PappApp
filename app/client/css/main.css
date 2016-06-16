@@ -145,12 +145,14 @@
   flex-direction: column;
   text-align: center; }
   .page-sessions .mdl-card .top {
-    -webkit-flex: 0 0 30px;
-    flex: 0 0 30px;
+    -webkit-flex: 0 0 60px;
+    flex: 0 0 60px;
     font-size: 1.5rem;
     padding-top: 5px;
     border-bottom: 1px solid gainsboro; }
     .page-sessions .mdl-card .top > .title {
+      height: 60px;
+      line-height: 60px;
       margin-left: auto;
       margin-right: auto; }
   .page-sessions .mdl-card .bottom {
@@ -266,7 +268,12 @@
         -webkit-flex: 1 60%;
         flex: 1 60%; }
         .mdl-card > .top-section > .main-info > .title div {
-          font-size: 1.4em; }
+          font-size: 1.4em;
+          height: 128px;
+          line-height: 4em; }
+          .mdl-card > .top-section > .main-info > .title div > div {
+            -webkit-align-self: center;
+            align-self: center; }
       .mdl-card > .top-section > .main-info > .sub-item {
         -webkit-flex: 1 20%;
         flex: 1 20%; }
@@ -292,8 +299,8 @@
     flex-direction: row;
     -webkit-align-items: center;
     align-items: center;
-    -webkit-flex: 1 20%;
-    flex: 1 20%;
+    -webkit-flex: 0 70px;
+    flex: 0 70px;
     border-top: 1px solid gainsboro;
     width: 100%; }
     .mdl-card > .bottom-section > .point-list {
@@ -305,6 +312,11 @@
       .mdl-card > .bottom-section > .point-list > .item {
         -webkit-flex: 0 15%;
         flex: 0 15%; }
+
+.mdl-textfield {
+  display: block;
+  margin-left: auto;
+  margin-right: auto; }
 
 html {
   font-size: 18px; }

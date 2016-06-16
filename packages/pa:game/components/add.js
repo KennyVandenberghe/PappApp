@@ -39,8 +39,9 @@ Template.addGame.events({
         session = Sessions.findOne({ended: {$exists: false}}),
         sessionId = session._id;
     _.each(session.players, function(player) {
-      var playerScore = parseInt($('[name=Score' + player.number + ']').text()),
-          p = _.extend({}, {
+      var playerScore = parseInt($('[name=Score' + player.number + ']').text());
+      playerScore = _.isNaN(playerScore) ? 0 : playerScore;
+      var p = _.extend({}, {
             playerId: player._id,
             name: player.name,
             score: playerScore

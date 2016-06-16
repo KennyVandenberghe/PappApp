@@ -1,0 +1,31 @@
+{
+  "name": "papapp-app",
+  "scripts": {
+    "start": "npm run local",
+    "local": "cd local && PACKAGE_DIRS=../rvn-lib/packages:../packages MONGO_URL=mongodb://localhost:27017/papapp meteor --settings .deploy/local.json --port 3000",
+    "app": "cd app && PACKAGE_DIRS=../rvn-lib/packages:../packages MONGO_URL=mongodb://localhost:27017/papapp meteor --settings .deploy/local.json --port 3000",
+    "services": "cd services && PACKAGE_DIRS=../rvn-lib/packages:../packages MONGO_URL=mongodb://localhost:27017/papapp meteor --settings .deploy/local.json --port 3002",
+    "update-local": "cd local && PACKAGE_DIRS=../rvn-lib/packages:../packages MONGO_URL=mongodb://localhost:27017/papapp meteor update",
+    "update-app": "cd app && PACKAGE_DIRS=../rvn-lib/packages:../packages MONGO_URL=mongodb://localhost:27017/papapp meteor update",
+    "update-services": "cd services && PACKAGE_DIRS=../rvn-lib/packages:../packages MONGO_URL=mongodb://localhost:27017/papapp meteor update",
+    "deploy-dev": "npm run deploy-dev-app & npm run deploy-dev-once & npm run deploy-dev-services",
+    "restart-dev": "npm run restart-dev-app & npm run restart-dev-services",
+    "deploy-dev-app": "cd assets && gulp build && cd ../app/.deploy/develop && PACKAGE_DIRS=~/projects/papapp/rvn-lib/packages:~/projects/papapp/packages mupx deploy",
+    "restart-dev-app": "cd app/.deploy/develop && mup reconfig",
+    "deploy-dev-services": "cd services/.deploy/develop && PACKAGE_DIRS=~/projects/papapp/rvn-lib/packages:~/projects/papapp/packages mupx deploy",
+    "restart-dev-services": "cd services/.deploy/develop && mup reconfig",
+    "deploy-staging": "npm run deploy-staging-app & npm run deploy-staging-services",
+    "restart-staging": "npm run restart-staging-app & npm run restart-staging-services",
+    "deploy-staging-app": "cd assets && gulp build && cd ../app/.deploy/staging && PACKAGE_DIRS=~/projects/papapp/rvn-lib/packages:~/projects/papapp/packages mupx deploy",
+    "restart-staging-app": "cd app/.deploy/staging && mup reconfig",
+    "deploy-staging-services": "cd services/.deploy/staging && PACKAGE_DIRS=~/projects/papapp/rvn-lib/packages:~/projects/papapp/packages mupx deploy",
+    "restart-staging-services": "cd services/.deploy/staging && mup reconfig",
+    "deploy": "npm run deploy-app & npm run deploy-services",
+    "restart-production": "npm run restart-app & npm run restart-services",
+    "deploy-app": "cd assets && gulp build && cd ../app/.deploy/production && PACKAGE_DIRS=~/projects/papapp/rvn-lib/packages:~/projects/papapp/packages DEBUG=* mupx deploy",
+    "restart-app": "cd app/.deploy/production && mup reconfig",
+    "deploy-services": "cd services/.deploy/production && PACKAGE_DIRS=~/projects/papapp/rvn-lib/packages:~/projects/papapp/packages mupx deploy",
+    "restart-services": "cd services/.deploy/production && mup reconfig",
+    "reset": "mongo papapp < db-scripts/reset.js"
+  }
+}

@@ -22,7 +22,7 @@ PA.Model.Game = {
       }
     });
     _.find(this.players, function(player) {
-      if (!! playerScore && player.score === playerScore) {
+      if ((!! playerScore || playerScore === 0) && player.score === playerScore) {
         winner = player;
       }
     });
@@ -67,11 +67,11 @@ if(Meteor.isServer) {
     //   });
     // },
     insertGame: function(sessionId, players) {
-      _.each(players, function(player) {
-        if(player.score === 0) {
-          throw new Meteor.Error(500, 'player score cannot be 0');
-        }
-      });
+      // _.each(players, function(player) {
+      //   if(player.score === 0) {
+      //     throw new Meteor.Error(500, 'player score cannot be 0');
+      //   }
+      // });
       Games.insert({
         sessionId: sessionId,
         players: players,

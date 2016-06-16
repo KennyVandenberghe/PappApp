@@ -4,11 +4,13 @@
     @include flex-direction(column);
     text-align: center;
     .top {
-      @include flex(0 0 30px);
+      @include flex(0 0 60px);
       font-size: 1.5rem;
       padding-top: 5px;
       border-bottom: 1px solid gainsboro;
       > .title {
+        height: 60px;
+        line-height: 60px;
         margin-left: auto;
         margin-right: auto;
       }
